@@ -26,7 +26,7 @@ export const Character = () => {
         <>
             <div>{character.name}</div>
             <div>
-                {films.map((film) => (<div key={film.id}>{film.title}</div>))}
+                {films.map((film) => (<div key={film.film_id}>{film.film_details[0].title}</div>))}
             </div>
         </>
     );
