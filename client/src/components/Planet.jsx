@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 
 export const Planet = () => {
     
@@ -44,14 +44,13 @@ export const Planet = () => {
             <p>{`Gravity: ${planet.gravity}`}</p>
             <p>{`Terrain: ${planet.terrain}`}</p>
             <h2>Films</h2>
-            <div>
-                {console.log(characters)}
-                {films.map((film) => (<div key={film.film_id}>{film.film_details[0].title}</div>))}
-            </div>
+            <ul>
+                {films.map((film) => (<li key={film.film_id}><Link to={`/film/${film.film_id}`}>{film.film_details[0].title}</Link></li>))}
+            </ul>
             <h2>Characters</h2>
-            <div>
-                {characters.map((character) => (<div key={character.id}>{character.name}</div>))}
-            </div>
+            <ul>
+                {characters.map((character) => (<li key={character.id}><Link to={`/character/${character.id}`}>{character.name}</Link></li>))}
+            </ul>
         </>
     );
 }
