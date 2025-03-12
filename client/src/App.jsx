@@ -13,6 +13,7 @@ function App() {
 
   return (
     <>
+      <h1>Star Wars Universe Lookup</h1>
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
