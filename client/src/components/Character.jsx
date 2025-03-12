@@ -35,7 +35,7 @@ export const Character = () => {
     }, [character]);
 
     return (
-        <>
+        <main>
             <h1 id="name">{character?.name}</h1>
             <section id="generalInfo">
                 <p>Height: <span id="height">{character?.height} cm</span></p>
@@ -52,6 +52,6 @@ export const Character = () => {
                     {films.map((film) => (<li key={film.film_id}>{film.film_details[0].title}</li>))}
                 </ul>
             </section>
-        </>
+        </main>
     );
 };
