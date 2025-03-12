@@ -37,20 +37,26 @@ export const Planet = () => {
     }, []);
 
     return (
-        <>
-            <h1>{planet.name}</h1>
-            <p>{`Climate: ${planet.climate}`}</p>
-            <p>{`Diameter: ${planet.diameter}`}</p>
-            <p>{`Gravity: ${planet.gravity}`}</p>
-            <p>{`Terrain: ${planet.terrain}`}</p>
-            <h2>Films</h2>
-            <ul>
-                {films.map((film) => (<li key={film.film_id}><Link to={`/film/${film.film_id}`}>{film.film_details[0].title}</Link></li>))}
-            </ul>
-            <h2>Characters</h2>
-            <ul>
-                {characters.map((character) => (<li key={character.id}><Link to={`/character/${character.id}`}>{character.name}</Link></li>))}
-            </ul>
-        </>
+        <main>
+            <h1 id="name">{planet.name}</h1>
+            <section id="generalInfo">
+                <p>Climate: <span id="climate">{planet.climate}</span></p>
+                <p>Diameter: <span id="diameter">{planet.diameter}</span></p>
+                <p>Gravity: <span id="gravity">{planet.gravity}</span></p>
+                <p>Terrain: <span id="terrain">{planet.terrain}</span></p>
+            </section>
+            <section id="films">
+                <h2>Films</h2>
+                <ul>
+                    {films.map((film) => (<li key={film.film_id}><Link to={`/film/${film.film_id}`}>{film.film_details[0].title}</Link></li>))}
+                </ul>
+            </section>
+            <section id="characters">
+                <h2>Characters</h2>
+                <ul>
+                    {characters.map((character) => (<li key={character.id}><Link to={`/character/${character.id}`}>{character.name}</Link></li>))}
+                </ul>
+            </section>
+        </main>
     );
 }
