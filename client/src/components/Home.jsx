@@ -15,10 +15,10 @@ export const Home = () => {
     }, []);
 
     return (
-        <>
+        <section id="charactersList">
             {
                 characters.map((character) => (<Link key={character.id} to={`/character/${character.id}`}>{character.name}</Link>))
             }
-        </>
+        </section>
     );
 };
