@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router';
+import { useParams, Link } from 'react-router';
 
 export const Film = () => {
     const [film, setFilm] = useState({});
@@ -46,13 +46,13 @@ export const Film = () => {
             <section id="characters">
                 <h2>Characters</h2>
                 <ul>
-                    {characters.map((character) => <li key={character.character_id}>{character.character_details[0]?.name}</li>)}
+                    {characters.map((character) => <li key={character.character_id}><Link to={`/character/${character.character_id}`}>{character.character_details[0]?.name}</Link></li>)}
                 </ul>
             </section>
             <section id="planets">
                 <h2>Planets</h2>
                 <ul>
-                    {planets.map((planet) => <li key={planet.planet_id}>{planet.planet_details[0]?.name}</li>)}
+                    {planets.map((planet) => <li key={planet.planet_id}><Link to={`/planet/${planet.planet_id}`}>{planet.planet_details[0]?.name}</Link></li>)}
                 </ul>
             </section>
         </main>
