@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import { Home } from './components/Home'
 import { Character } from './components/Character'
+import { Planet } from './components/Planet'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/character/:id" element={<Character />} />
+          <Route path="/planet/:id" element={<Planet />} />
         </Routes>
       </Router>
     </>
